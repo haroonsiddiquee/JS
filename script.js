@@ -1,46 +1,48 @@
 // ------------------------------------------------------------
-// 10. COMPARISON OPERATORS
+// 11. LOGICAL OPERATORS
 // ------------------------------------------------------------
-// ==   loose equality   -> converts types before comparing (avoid this!)
-// ===  strict equality  -> checks value AND type (PREFERRED, always use this)
-// !=   loose not-equal
-// !==  strict not-equal (PREFERRED)
-// <  >  <=  >=
- 
-// Loose equality (==) gives weird/unexpected results:
-// console.log(1 == 1);            true
-// console.log(true == 1);         true
-// console.log(null == undefined); true  (special case, they're loosely equal)
-// console.log(null == false);     false (surprising!)
-// console.log(undefined == false);false
-// console.log(null == true);     false (surprising! Because null & undefined are not loosely equivalent )
-// console.log(undefined == true);false (to true or false. Meaning there domain is different.)
-// console.log("" == 0);           true
- 
-// Strict equality (===) avoids all this weirdness:
-// console.log(undefined === null); false (different types)
-// console.log(1 === 1);             true
-// console.log(1 !== 1);             false
- 
-// RULE OF THUMB: Always use === and !==, avoid == and != unless
-// you specifically know why you need loose comparison.
+// &&  AND     ||  OR      !  NOT
+//
+// With actual booleans, behaves normally:
+//console.log(true && false);  false
+//console.log(true || false);  true
+//console.log(!true);          false
+//
+// With NON-boolean values, JS returns one of the ORIGINAL VALUES
+// (not true/false) based on "truthy"/"falsy" rules:
+//console.log("hello" || true);    "hello" (truthy value picked first for ||)
+//console.log("" || true);         true ("" is falsy, so moves to next)
+//console.log(true && "hello");    "hello" (if left is truthy, returns right side)
+//console.log(false && "hello");   false (left is falsy, short-circuits)
+//
+// Convert anything to explicit boolean:
+//Boolean("hello");  true
+//Boolean("");       false
+//Boolean(0);        false
+//Boolean(2);        true
 
-console.log("1" == 1)
-console.log(undefined == null)
-console.log("1,2" == [1, 2])
-console.log("1" != 1)
-console.log("1,2" != 12)
-console.log(undefined === null)
-console.log(undefined !== null)
-console.log(undefined === "")
-console.log(undefined !== "")
-console.log("1" === 1)
-console.log("1" !== 1)
-console.log("1" > 1)
-console.log("2" > 1)
-console.log("2" >= 1)
-console.log("1" >= 1)
-console.log("1" < 1)
-console.log("1" < 3)
-console.log("1" <= 3)
-console.log("1" <= 1)
+console.log(true && false)
+console.log(false && true)
+console.log(true || false)
+console.log(false || true)
+console.log(!true)
+console.log(!false)
+console.log(!(true && false))
+console.log(!(true || false))
+console.log(!(!(true) || false))
+console.log(!(!(true) || !(false)))
+console.log(!(true || !(false)))
+
+
+console.log("hello" || true)
+console.log("hello" || false)
+console.log("" || true)
+console.log("" || "hello")
+console.log("hello" && true)
+console.log("hello" && false)
+console.log(!false && "hello")
+console.log("hello" && !false)
+console.log(!true && "hello")
+console.log("hello" && !true)
+console.log("" && "hello")
+console.log(Boolean(90) && Boolean("hello"))
