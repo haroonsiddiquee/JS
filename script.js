@@ -1,5 +1,6 @@
-const v = 55
-
-console.log(`V=${v}`)
-console.error("error909")
-console.warn("warning-error")
+console.log("There are 5 main DATA types used in JavaScript")
+console.log("1. String(Double quotes, Single quotes & Back ticks)")
+console.log("2. Boolean(True or False)")
+console.log("3. Number(3,55,9.2,-24)")
+console.log("4. Undefined(It means you haven't assigned a variable yet but will later)")
+console.log("5. Null(It means it is literally empty)")
