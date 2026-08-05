@@ -1,43 +1,33 @@
 // ------------------------------------------------------------
-// 8. ARITHMETIC OPERATORS & TYPE COERCION
+// 9. TYPE CONVERSION (explicit / manual)
 // ------------------------------------------------------------
-// Standard operators: +  -  *  /  **(exponent)  %(modulus)  ++  --
-// Shorthand: += -= *= /= %=
-//
-// TYPE COERCION: JS automatically converts types when mixing them
-// in an operation. This is one of JS's "weird" behaviors.
+// String -> Number:
+// Number("2345.8");    2345.8
+// parseInt("2345px");  2345  (grabs only the integer part, ignores "px")
+// parseFloat("23.4");  23.4  (keeps decimal)
+// Number(true);         1
+// Number(false);         0
  
-// console.log(6 + "7");  -----------  "67"  -> number converted to string, then concatenated
-// console.log("7" + 6);  -----------  "76"  -> same idea, order matters for the output string
-// console.log(6 + true);  ----------  7     -> true acts like 1
-// console.log(6 + false);  ---------  6     -> false acts like 0
-// console.log("hello" + false);  ---  "hellofalse"
- 
-// With operators OTHER than + (like * / -), JS tries to CONVERT
-// strings to numbers instead of concatenating:
-// console.log("123" * 2);  ---------  246
-// console.log("123" / 2);  ---------  61.5
-// console.log("hello" - 2);  -------  NaN ("Not a Number" - conversion failed)
+// Number -> String:
+// String(6);          "6"
+// (6).toString();     "6"
+// 6 + "";             "6"  (adding empty string forces string conversion)
 
-const x = 5
-const y = "9"
-console.log(x+y)
-const z = true
-console.log(x+z)
-const a = false
-console.log(x+a)
-const b = "Hello "
-console.log(b+z)
-console.log(y-x)
-console.log(y-z)
-console.log(y-b)
-console.log(x*y)
-console.log(x*z)
-console.log(x*a)
-console.log(x*b)
-console.log(z*a)
-console.log(y/x)
-console.log(y/z)
-console.log(y/a)
-console.log(y/b)
-console.log(z/a)
+const a = 67
+const b = "2345"
+const c = "123.5"
+const d = "365px"
+const e = "365.6px"
+const f = true
+const g = false
+
+console.log(a+b)
+console.log(Number(b)+a)
+console.log(Number(c)+a)
+console.log(parseInt(d)+a)
+console.log(parseFloat(e)+a)
+console.log(Number(f)+a)
+console.log(Number(g)+a)
+console.log(String(a)+b)
+console.log(a+"Hello")
+console.log(a.toString())
