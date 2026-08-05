@@ -1,33 +1,46 @@
 // ------------------------------------------------------------
-// 9. TYPE CONVERSION (explicit / manual)
+// 10. COMPARISON OPERATORS
 // ------------------------------------------------------------
-// String -> Number:
-// Number("2345.8");    2345.8
-// parseInt("2345px");  2345  (grabs only the integer part, ignores "px")
-// parseFloat("23.4");  23.4  (keeps decimal)
-// Number(true);         1
-// Number(false);         0
+// ==   loose equality   -> converts types before comparing (avoid this!)
+// ===  strict equality  -> checks value AND type (PREFERRED, always use this)
+// !=   loose not-equal
+// !==  strict not-equal (PREFERRED)
+// <  >  <=  >=
  
-// Number -> String:
-// String(6);          "6"
-// (6).toString();     "6"
-// 6 + "";             "6"  (adding empty string forces string conversion)
+// Loose equality (==) gives weird/unexpected results:
+// console.log(1 == 1);            true
+// console.log(true == 1);         true
+// console.log(null == undefined); true  (special case, they're loosely equal)
+// console.log(null == false);     false (surprising!)
+// console.log(undefined == false);false
+// console.log(null == true);     false (surprising! Because null & undefined are not loosely equivalent )
+// console.log(undefined == true);false (to true or false. Meaning there domain is different.)
+// console.log("" == 0);           true
+ 
+// Strict equality (===) avoids all this weirdness:
+// console.log(undefined === null); false (different types)
+// console.log(1 === 1);             true
+// console.log(1 !== 1);             false
+ 
+// RULE OF THUMB: Always use === and !==, avoid == and != unless
+// you specifically know why you need loose comparison.
 
-const a = 67
-const b = "2345"
-const c = "123.5"
-const d = "365px"
-const e = "365.6px"
-const f = true
-const g = false
-
-console.log(a+b)
-console.log(Number(b)+a)
-console.log(Number(c)+a)
-console.log(parseInt(d)+a)
-console.log(parseFloat(e)+a)
-console.log(Number(f)+a)
-console.log(Number(g)+a)
-console.log(String(a)+b)
-console.log(a+"Hello")
-console.log(a.toString())
+console.log("1" == 1)
+console.log(undefined == null)
+console.log("1,2" == [1, 2])
+console.log("1" != 1)
+console.log("1,2" != 12)
+console.log(undefined === null)
+console.log(undefined !== null)
+console.log(undefined === "")
+console.log(undefined !== "")
+console.log("1" === 1)
+console.log("1" !== 1)
+console.log("1" > 1)
+console.log("2" > 1)
+console.log("2" >= 1)
+console.log("1" >= 1)
+console.log("1" < 1)
+console.log("1" < 3)
+console.log("1" <= 3)
+console.log("1" <= 1)
