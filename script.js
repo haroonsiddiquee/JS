@@ -1,48 +1,37 @@
 // ------------------------------------------------------------
-// 11. LOGICAL OPERATORS
+// 12. CONDITIONALS: if / else if / else
 // ------------------------------------------------------------
-// &&  AND     ||  OR      !  NOT
-//
-// With actual booleans, behaves normally:
-//console.log(true && false);  false
-//console.log(true || false);  true
-//console.log(!true);          false
-//
-// With NON-boolean values, JS returns one of the ORIGINAL VALUES
-// (not true/false) based on "truthy"/"falsy" rules:
-//console.log("hello" || true);    "hello" (truthy value picked first for ||)
-//console.log("" || true);         true ("" is falsy, so moves to next)
-//console.log(true && "hello");    "hello" (if left is truthy, returns right side)
-//console.log(false && "hello");   false (left is falsy, short-circuits)
-//
-// Convert anything to explicit boolean:
-//Boolean("hello");  true
-//Boolean("");       false
-//Boolean(0);        false
-//Boolean(2);        true
+// if (true) {
+//   console.log("Hello World");
+// } else if (false) {
+//   console.log("do something");
+// } else {
+//   console.log("run");
+// }
+ 
+// If there's only ONE statement to run, braces {} are optional:
+// if (true) console.log("no braces needed for single line");
+ 
+// WARNING: without braces, ONLY the next single line belongs to
+// the if/else — adding a second line makes it run unconditionally!
+ 
+// Ternary operator (inline if/else, one-liner):
+// const condition = 2 < 3 ? "okay cool" : "no";
+// console.log(condition);
+// syntax: (test) ? valueIfTrue : valueIfFalse
 
-console.log(true && false)
-console.log(false && true)
-console.log(true || false)
-console.log(false || true)
-console.log(!true)
-console.log(!false)
-console.log(!(true && false))
-console.log(!(true || false))
-console.log(!(!(true) || false))
-console.log(!(!(true) || !(false)))
-console.log(!(true || !(false)))
+if(false)
+    console.log("Hello World")
+// else if(true)
+//     console.log("run")
+else{
+    console.log("cigarettes")
+    console.log("after")
+    console.log("everything")
+}
 
+const cond = 2<3 ? "yes" : "no"
+console.log(cond)
 
-console.log("hello" || true)
-console.log("hello" || false)
-console.log("" || true)
-console.log("" || "hello")
-console.log("hello" && true)
-console.log("hello" && false)
-console.log(!false && "hello")
-console.log("hello" && !false)
-console.log(!true && "hello")
-console.log("hello" && !true)
-console.log("" && "hello")
-console.log(Boolean(90) && Boolean("hello"))
+const condi = 3<2 ? "yes" : "no"
+console.log(condi)
