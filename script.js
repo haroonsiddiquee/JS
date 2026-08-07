@@ -1,32 +1,47 @@
 // ------------------------------------------------------------
-// 16. WHILE LOOPS / DO-WHILE
+// 17. FOR LOOPS
 // ------------------------------------------------------------
-
-// let i = 0;
-// while (i < 5) {
-//   console.log(i);
-//   i++;
+// Classic for loop:
+// for (let k = 0; k < 10; k++) {
+//   console.log(k);
+// }
+// Structure: (initialization; condition; increment)
+ 
+// for...of  -> loops over VALUES of an iterable (array, string, etc.)
+// for (const val of [4, 5, 6]) {
+//   console.log(val);
 // }
  
-// do-while: runs the block FIRST, THEN checks condition
-// (so it always executes at least once, even if condition is false)
+// for...in  -> loops over KEYS/indices — mainly used for OBJECTS
+// (using `in` on arrays can give unexpected results, prefer `of` for arrays)
+// for (const key in { a: 1, b: 2 }) {
+//   console.log(key);         ---------- "a", "b"
+// }
+ 
+// Getting both index AND value from an array:
+// for (const [idx, val] of [10, 20, 30].entries()) {
+//   console.log(idx, val);
+// }
 
-// let j = 0;
-// do {
-//   console.log(j);
-//   j++;
-// } while (j < 5);
-
-do{
-    console.log("live")
-    break
-}while(true)
-
-while(true){
-    console.log("die")
-    break
+for(let i = 20; i > 10; i--){
+    console.log(i)
+    continue
 }
 
-console.warn("Warning")
+const arr = [1, 2, 3, 4]
 
-console.error("Error")
+for(let i = 0; i < arr.length; i++){
+    console.log(arr[i])
+}
+
+const str = "hello"
+
+for(let value of str){
+    console.log(value)
+}
+
+const arr2 = [ 1, 2, 3, 4]
+
+for(let [ i, value] of arr2.entries()){
+    console.log( i, value)
+}
