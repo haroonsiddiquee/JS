@@ -26,3 +26,7 @@ while(true){
     console.log("die")
     break
 }
+
+console.warn("Warning")
+
+console.error("Error")
