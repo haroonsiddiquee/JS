@@ -1,27 +1,28 @@
 // ------------------------------------------------------------
-// 15. ARRAY DESTRUCTURING & SPREAD OPERATOR
+// 16. WHILE LOOPS / DO-WHILE
 // ------------------------------------------------------------
-// Destructuring — unpack array values into separate variables:
 
-// const [x1, y1] = [1, 2];
-// console.log(x1, y1);                        ----- 1 2
+// let i = 0;
+// while (i < 5) {
+//   console.log(i);
+//   i++;
+// }
  
-// With rest (...) to gather remaining elements:
-// const [first, ...rest] = [1, 2, 3, 4];
-// console.log(first, rest);                   ----- 1 [2, 3, 4]
- 
-// Spread operator (...) — copies elements WITHOUT sharing reference:
-// const original = [1, 2, 3];
-// const copy = [...original];                 ----- true independent copy
-// const combined = [1, 2, ...original];       ----- merge into new array
-// Without spread, `const copy2 = original;` just copies the REFERENCE —
-// changing copy2 would also change original (they'd point to same array)
+// do-while: runs the block FIRST, THEN checks condition
+// (so it always executes at least once, even if condition is false)
 
-const [x, y, ...z] = [1, 2, 3, 4]
-console.log(x, y, z)
+// let j = 0;
+// do {
+//   console.log(j);
+//   j++;
+// } while (j < 5);
 
-const a = [1, 2, 3, 4]
-const b = [...a, 5, 6, 7, 8]
+do{
+    console.log("live")
+    break
+}while(true)
 
-b.push("hello")
-console.log(a, b)
+while(true){
+    console.log("die")
+    break
+}
